@@ -12,7 +12,7 @@ const TOC = () => {
    return ( 
        <>
 		   <button class="bg-blue-500 ml-6 fixed left-0 py-2 px-4 hover:bg-blue-700 text-white font-bold rounded" onClick={toggleSidebar}>{isSidebarOpen ? "Close" : "Open"} Sidebar</button>
-  			<div className={`fixed left-0 p-6 mt-10 w-240 w-72 overflow-y-scroll h-full text-lg text-wrap list-disc ${isSidebarOpen ? 'block' : 'hidden'}`}>
+  			<div className={`fixed left-0 p-6 bg-background rounded-2xl max-2xl:border mt-10 w-240 w-72 overflow-y-scroll h-full text-lg text-wrap list-disc ${isSidebarOpen ? 'block' : 'hidden'}`}>
 					<a href="/" className="text-2xl dark:text-gray-400 mb-1">Home</a>
 					<h2 className="text-2xl dark:text-gray-400 mb-1">Getting Started</h2>
 					<div className="flex flex-col space-y-1">
