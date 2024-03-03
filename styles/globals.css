@@ -37,6 +37,9 @@
   .main {
       @apply flex flex-col justify-between items-center min-h-screen leading-[1.5em] pt-4 p-3;
   }
+  a{
+    @apply text-blue-300;
+  }
   a:hover{
     @apply underline
   }
