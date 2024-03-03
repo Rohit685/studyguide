@@ -16,7 +16,7 @@ export default function Home() {
                     <div className={"card"}>
                         <p>In this section, you will learn the Object Oriented Programming. The core principles
                             of how a C# project is made. You will learn: </p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-1/3">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                             <h3 className={"text-xl text-left"}>Logical Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li><a href="/oop/cao">Classes and Objects</a></li>

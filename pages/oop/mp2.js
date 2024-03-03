@@ -26,7 +26,7 @@ export default function Home() {
                             this mini project.
                         </p>
                         <p>Key Features</p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-3/4">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>Create an <b>Objective Class</b> with whatever you think is important for an objective
                                     you have to complete.

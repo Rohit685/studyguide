@@ -1,8 +1,14 @@
 import NextSection from "@/components/NextSection";
+import Head from "next/head";
 
 export default function HomePage() {
   return (
       <>
+          <Head>
+              <title>C# Beginner's Guide</title>
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <link rel="icon" href="/favicon.ico" />
+          </Head>
       <div class={"card"}>
           <div class={"m-5"}><h2 class="text-center text-2xl">The Introductory Guide to C#</h2>
           </div>

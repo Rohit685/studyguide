@@ -49,7 +49,7 @@ export default function Home() {
                         Create a simple command-line calculator that allows users to perform basic arithmetic operations (addition, subtraction, multiplication, and division) 
                         on two numbers. </p>
                     <p>Key Features</p>
-                     <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-3/4">
+                     <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                         <div className="flex flex-col space-y-1 ml-3">
                             <li>Display a menu for the user to select an operation (e.g., addition, subtraction, multiplication, division).</li>
                             <li>Prompt the user to enter two numbers.</li>
@@ -67,7 +67,7 @@ export default function Home() {
                     </p>
                     <p>If you completed this project with no struggle and need more of a challenge, here is some functionality you can add that is a
                     little bit more challenging. <i>I have not gone over everything in the list below</i></p>
-                    <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-3/4">
+                    <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                         <div className="flex flex-col space-y-1 ml-3">
                             <li>For addition and multiplication, allow the user to input as many numbers as they would
                                 like.

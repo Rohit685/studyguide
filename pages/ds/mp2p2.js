@@ -19,7 +19,7 @@ export default function Home() {
                             We are going to finish the todo list with our new knowledge of lists and arrays!
                         </p>
                         <p>Tasks to Finish</p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-4/5">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>Store all objectives in a List</li>
                                 <li>Allow users to list all tasks that have been added</li>
