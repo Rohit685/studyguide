@@ -11,7 +11,7 @@ const TOC = () => {
    
    return ( 
        <>
-  			<div className={`fixed left-0 z-50 ${isSidebarOpen ? 'bg-background rounded-2xl max-2xl:border' : 'bg-none'}`}>
+  			<div className={`fixed top-0 -left-2 z-50 ${isSidebarOpen ? 'bg-background rounded-2xl max-2xl:border' : 'bg-none'}`}>
                 <button class="relative bg-blue-500 mx-6 mt-2 fixed left-0 py-2 px-4 hover:bg-blue-700 text-white font-bold rounded-2xl" onClick={toggleSidebar}>{isSidebarOpen ? "Close" : "Open"}</button>
   			<div className={`px-6 pb-36 my-1 w-240 overflow-y-scroll h-screen text-lg list-disc ${isSidebarOpen ? 'block' : 'hidden'}`}>
 				<a href="/" className="text-2xl dark:text-gray-400">Home</a>
