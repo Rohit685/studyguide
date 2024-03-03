@@ -35,7 +35,7 @@
     
   }
   .main {
-      @apply flex flex-col justify-between items-center min-h-screen leading-[1.5em] pt-1 p-3;
+      @apply flex flex-col justify-between items-center min-h-screen leading-[1.5em] pt-4 p-3;
   }
   a:hover{
     @apply underline
@@ -46,9 +46,13 @@
   p {
     @apply text-lg text-left bg-gray-700 rounded-2xl p-3 mb-3 mt-3 w-fit 
   }
+  li{
+    @apply w-fit
+  }
     /* width */
   ::-webkit-scrollbar {
-    width: 0;
+    width: 0px;
+    height: 0;
   }
   
   /* Track */
@@ -69,7 +73,7 @@
 
 @layer utilities {
   .card {
-    @apply rounded-2xl max-w-[1300px] mb-3 p-2;
+    @apply rounded-2xl max-w-[1300px] mb-3 p-3;
     outline: 1px solid hsl(var(--border));
   }
   .left {

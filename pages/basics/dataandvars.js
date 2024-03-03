@@ -47,7 +47,7 @@ export default function Home() {
                                 </p>
                                 <div className="space-y-2 bg-gray-700 rounded-2xl p-3">
                                     <h3 className={"text-xl text-left"}>Numeric Types</h3>
-                                    <div className="flex flex-col space-y-1 list-none ml-3">
+                                    <div className="flex flex-col space-y-1 ml-3">
                                         <li>int: A number without decimals.</li>
                                         <li>float: A number with 7 decimal digits of precision.</li>
                                         <li>double: A number with 15 decimal digits of precision</li>
@@ -55,13 +55,13 @@ export default function Home() {
                                 </div>
                                 <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3">
                                     <h3 className={"text-xl text-left"}>Boolean Types</h3>
-                                    <div className="flex flex-col space-y-1 list-none ml-3">
+                                    <div className="flex flex-col space-y-1 ml-3">
                                         <li>bool: True/False value</li>
                                     </div>
                                 </div>
                                 <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3">
                                     <h3 className={"text-xl text-left"}>Reference Types</h3>
-                                    <div className="flex flex-col space-y-1 list-none ml-3">
+                                    <div className="flex flex-col space-y-1 ml-3">
                                         <li>Class</li>
                                         <li>Array</li>
                                         <li>String: Alphanumeric sequence of characters.</li>

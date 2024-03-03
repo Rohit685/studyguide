@@ -51,8 +51,7 @@ export default function Home() {
                             Here are the main parts of a method:
                         </p>
                         <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3">
-                            <h3 className={"text-xl text-left"}>Reference Types</h3>
-                            <div className="flex flex-col space-y-1 list-none ml-3">
+                            <div className="flex flex-col space-y-1 ml-3">
                                 <li>Method Signature</li>
                                 <li>Parameters</li>
                                 <li>Body</li>
