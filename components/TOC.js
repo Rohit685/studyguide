@@ -33,7 +33,7 @@ const TOC = () => {
 					<div className="flex flex-col space-y-1">
 						<li><a href="/oop/cao">Classes and Objects</a></li>
 						<li><a href="/oop/constructors">Constructors</a></li>
-						<li><a href="/oop/methods">Methods/Functions</a></li>
+						<li><a href="/oop/methods">Methods</a></li>
 						<li><a href="/oop/stvsnonst">Static vs Non-Static</a></li>
 						<li><a href="/oop/mp2">Mini Project 2 Part 1</a></li>
 					</div>

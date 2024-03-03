@@ -85,7 +85,7 @@ export default function Home() {
                             operands.
                             C# provides a wide range of operators for performing various tasks, including mathematical
                             calculations, logical operations, and more. </p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-1/4">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                             <h3 className={"text-xl text-left"}>Arithmetic Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>+ -&gt; Addition</li>
@@ -101,7 +101,7 @@ export default function Home() {
                             For example..</p>
                         <SyntaxHighlighter language="csharp" code={asOperators} style={nightOwl}
                                            useInlineStyles={true}/>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-3/4">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                             <h3 className={"text-xl text-left"}>Comparison Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>== -&gt; Equal To</li>
@@ -117,7 +117,7 @@ export default function Home() {
                             </div>
                         </div>
                         <SyntaxHighlighter language="csharp" code={cOperators} style={nightOwl} useInlineStyles={true}/>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-1/3">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
                             <h3 className={"text-xl text-left"}>Logical Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>! -&gt; Not</li>
