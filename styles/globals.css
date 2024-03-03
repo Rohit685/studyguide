@@ -1,33 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 222, 47%, 11%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 215, 13%, 72%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    
+  }
+  .main {
+      @apply flex flex-col justify-between items-center min-h-screen leading-[1.5em] pt-1 p-3;
+  }
+  a:hover{
+    @apply underline
+  }
+  h3 {
+    @apply text-2xl text-center
+  }
+  p {
+    @apply text-lg text-left bg-gray-700 rounded-2xl p-3 mb-3 mt-3 w-fit 
+  }
+    /* width */
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ca2b2b
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .card {
+    @apply rounded-2xl max-w-[1300px] mb-3 p-2;
+    outline: 1px solid hsl(var(--border));
+  }
+  .left {
+    flex: 1;
+    margin-right: 1rem;
+  }
+  .container {
+    display: flex;
+  }
+  .right {
+    flex: 1;
+  }
+  pre {
+    border-radius: 1rem !important;
+    width: fit-content !important;
+    background-color: rgba(242, 161, 199, 0.08) !important;
+    text-shadow: none !important;
+    color: white !important;
+  }  
+  code {
+    text-shadow: none !important;
+    color: #d6deeb !important;
+  }
+  @media (max-width: 768px) {
+    img{
+      display: none;
+    }
+    pre {
+      display: none;
+    }
   }
 }
+
