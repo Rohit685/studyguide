@@ -21,6 +21,7 @@ export default function Home() {
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li><a href={"/ds/arrays"}>Arrays</a></li>
                                 <li><a href={"/ds/lists"}>Lists</a></li>
+                                <li><a href={"/ds/mp2p2"}>Project</a></li>
                             </div>
                         </div>
                         <p>

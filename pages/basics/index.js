@@ -27,6 +27,7 @@ export default function Home() {
                                     <li><a href="/basics/operators">Operators</a></li>
                                     <li><a href="/basics/wws">Working with Strings</a></li>
                                     <li><a href="/basics/controlflow">Control Flow</a></li>
+                                    <li><a href="/basics/project">Project</a></li>
                                 </div>
                             </div>
                         </nav>

@@ -27,8 +27,8 @@ export default function Home() {
                                 <li>Allow users to delete specific tasks</li>
                             </div>
                         </div>
+                        <p>Thank you for looking into this study guide. Hopefully it helped you in a tiny way!</p>
                     </div>
-                    <p>Thank you for looking into this study guide. Hopefully it helped you in a tiny way!</p>
                 </div>
 </>
 )
