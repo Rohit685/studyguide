@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
-import ShowAnswer from "@/components/ShowAnswer";
+import QuizQuestion from "@/components/QuizQuestion";
 
 
 
@@ -127,7 +127,7 @@ export default function Home() {
                             </div>
                         </div>
                         <SyntaxHighlighter language="csharp" code={lOperators} style={nightOwl} useInlineStyles={true}/>
-                        <ShowAnswer question={"What does this expression evaluate to if x = -1 and y = 1?"} qCode={`bool result = (x > 0 && y < 0) || (x < 0 && y > 0); `} explanation={"true"}/>
+                        <QuizQuestion question={"What does this expression evaluate to if x = -1 and y = 1?"} qCode={`bool result = (x > 0 && y < 0) || (x < 0 && y > 0); `} explanation={"true"}/>
                     </div>
                     <div className={"card"}>
                         <h3>Adding functionality to our bank account</h3>

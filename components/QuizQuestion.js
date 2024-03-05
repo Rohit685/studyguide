@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-const ShowAnswer = ({ question, qCode, aCode, explanation }) => {
+const QuizQuestion = ({ question, qCode, aCode, explanation }) => {
   const [show, setShow] = useState(false);
 
   const toggleAnswer = () => {
@@ -28,4 +28,4 @@ const ShowAnswer = ({ question, qCode, aCode, explanation }) => {
   );
 };
 
-export default ShowAnswer;
+export default QuizQuestion;
