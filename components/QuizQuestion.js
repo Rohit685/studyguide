@@ -17,11 +17,11 @@ const QuizQuestion = ({ question, qCode, aCode, explanation }) => {
             <button className={"bg-blue-500 hover:bg-blue-700 text-white p-3 h-fit rounded-2xl max-xs:my-1"} onClick={toggleAnswer}>Toggle Answer</button>
         </div>
         {show && 
-            <div className={`card outline-0 p-0 items-center`}>
-                { aCode != null && <SyntaxHighlighter language="csharp" code={aCode} style={nightOwl} useInlineStyles={true}/> }
+            <div className={`card p-1 mt-2 items-center`}>
                 <p>
                     {explanation}
                 </p>
+                { aCode != null && <SyntaxHighlighter language="csharp" code={aCode} style={nightOwl} useInlineStyles={true}/> }
             </div>
         }
       </div>

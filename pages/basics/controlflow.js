@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 const ifstatement = `Console.Write("What is your age: ");
 int age = Int32.Parse(Console.ReadLine());
 if(age >= 18) {
@@ -129,6 +130,11 @@ const continueExample = `for (int i = 1; i <= 10; i++)
         continue;  // This will exit the loop when i equals 5.
     }
     Console.WriteLine("i = " + i);
+}`
+
+const quizForLoopAnswer = `for (int i = 0; i <= 10; i += 2)
+{
+    Console.WriteLine(i);
 }`
 
 const breakReturn = `i = 1
@@ -299,9 +305,9 @@ export default function Home() {
                     <p>i is a very common variable used for the counter in for loops. The variable can be named anything you want.
                     In this example, the counter starts at 1 and goes till it is less than or equal to 5. Each time, it prints out the counter.
                     </p>
-                    <h4 className={"text-center text-lg"}>
-                        <b>Putting it all together: </b> Make it only even numbers from 0 to 10 using <b>only</b> a for loop.
-                    </h4>
+                    <QuizQuestion question={"Using a for loop, print out only even numbers from 0-10"} 
+                                  explanation={"The answer to this question involves switching the increment so it increases by 2 instead of 1."} 
+                                  aCode={quizForLoopAnswer}/>
                     <br/>
                     <h3>While Loops</h3>
                     <p>Basic While Loop Structure</p>
