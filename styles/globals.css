@@ -75,10 +75,6 @@
 }
 
 @layer utilities {
-  .card {
-    @apply rounded-2xl max-w-[1300px] mb-3 p-3;
-    outline: 1px solid hsl(var(--border));
-  }
   .left {
     flex: 1;
     margin-right: 1rem;
@@ -111,3 +107,9 @@
   }
 }
 
+@layer components {
+  .card {
+    @apply rounded-2xl max-w-[1300px] mb-3 p-3;
+    outline: 1px solid hsl(var(--border));
+  }
+}

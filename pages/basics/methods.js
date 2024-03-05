@@ -104,10 +104,10 @@ export default function Home() {
                             <SyntaxHighlighter style={nightOwl} code={`nameOfTheMethod(any parameters the method might take in);`} 
                                                useInlineStyles={true}/>
                             <p>Some methods may require a class in front of the method or instance variable of a class.</p>
-                            <p>Example of static method</p>
+                            <p>Example of method</p>
                             <SyntaxHighlighter language={"csharp"} style={nightOwl} code={`Console.WriteLine()`} useInlineStyles={true}/>
                             <p>You can also call methods on objects(also known as reference types), such as Strings.
-                            We will learn more about the difference between the two and how to tell the difference in the next section.
+                            We will learn more about the difference between the two in the OOP section.
                             For now, it's important to learn how to create methods and call the methods.</p>
                             <SyntaxHighlighter language={"csharp"} style={nightOwl} code={instanceMethod} useInlineStyles={true}/>
                     </div>

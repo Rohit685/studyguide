@@ -19,7 +19,7 @@ export default function HomePage() {
               in order to really solidify the concepts. At the end of each major section, I have added a mini project. There is not one right answer for this mini project. I have outlined some requirements. 
               If you complete the project, I think you have understood everything in that section.
               </p>
-              <p>Also, on smaller screens, images and code examples will not be showed.</p>
+              <p>Also, on smaller screens, images, code examples, and all portions of quiz questions will not be showed.</p>
           <a href={"/setupenv"} class={"hover:underline text-blue-300 text-center"}>
             <h2 class={"text-2xl pt-2"}>Next Section: Setting up Development Environment</h2>
           </a>
