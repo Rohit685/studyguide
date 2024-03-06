@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 const ifstatement = `Console.Write("What is your age: ");
 int age = Int32.Parse(Console.ReadLine());
 if(age >= 18) {
@@ -131,6 +132,11 @@ const continueExample = `for (int i = 1; i <= 10; i++)
     Console.WriteLine("i = " + i);
 }`
 
+const quizForLoopAnswer = `for (int i = 0; i <= 10; i += 2)
+{
+    Console.WriteLine(i);
+}`
+
 const breakReturn = `i = 1
 i = 2
 i = 3
@@ -229,7 +235,7 @@ export default function Home() {
                         C# goes in <b>sequential</b> order unless otherwise specified by different structures.
                         There are 3 main types of control structures.
                     </p>
-                    <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                    <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                         <div className="flex flex-col space-y-1 ml-3">
                             <li>Conditional Statements</li>
                             <li>Iterative Statements (Loops)</li>
@@ -299,9 +305,9 @@ export default function Home() {
                     <p>i is a very common variable used for the counter in for loops. The variable can be named anything you want.
                     In this example, the counter starts at 1 and goes till it is less than or equal to 5. Each time, it prints out the counter.
                     </p>
-                    <h4 className={"text-center text-lg"}>
-                        <b>Putting it all together: </b> Make it only even numbers from 0 to 10 using <b>only</b> a for loop.
-                    </h4>
+                    <QuizQuestion question={"Using a for loop, print out only even numbers from 0-10"} 
+                                  explanation={"The answer to this question involves switching the increment so it increases by 2 instead of 1."} 
+                                  aCode={quizForLoopAnswer}/>
                     <br/>
                     <h3>While Loops</h3>
                     <p>Basic While Loop Structure</p>

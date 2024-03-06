@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 
 const usingPlus = `string firstName = "John";
 string lastName = "Doe";
@@ -45,6 +46,11 @@ static double DepositBalance(double balance, double additionalBalance)
     return balance + additionalBalance;
 }`
 
+const quizQuestion = `String name = "Garry Johnson";
+int number = 4;
+String book = "book";
+`
+
 export default function Home() {
     return (
         <>
@@ -75,6 +81,10 @@ export default function Home() {
                         <p>I mean....sure</p>
                         <SyntaxHighlighter language="csharp" style={nightOwl} code={stringconcatmethod} useInlineStyles={true}/>
                         <p>As you can see, there are a lot of ways to combine strings and add variables. It is personal preference. I prefer the middle method personally.</p>
+                        <QuizQuestion question={"Assign the string, mySentence, to a sentence using the variables provided that makes sense and uses String Interpolation. " +
+                            "There are multiple right answers."}
+                                      qCode={quizQuestion} aCode={`String mySentence = $"{name} has {number} of {books}";`} 
+                                      explanation={"Make sure each variable has the {} around them. Before the starting quotation, do not forget the $ that signifies the string interpolation notation."}/>
                     </div>
                     <div className={"card"}>
                         <h3>Other methods</h3>

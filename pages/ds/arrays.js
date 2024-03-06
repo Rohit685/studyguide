@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 
 
 const declare = `int[] myArray`
@@ -12,6 +13,12 @@ const length = `myArray.Length`
 const forloop = `for (int i = 0; i < myArray.Length; i++)
 {
     Console.WriteLine($"Element at index {i}: {myArray[i]}");
+}`
+const quizQuestionAnswer = `for (int i = 0; i < myArray.Length; i++)
+{
+    if(i % 2 == 0) {
+        Console.WriteLine($"Element at index {i}: {myArray[i]}");
+    }    
 }`
 
 const foreachstruct = `foreach (elementType variable in collection)
@@ -78,10 +85,9 @@ export default function Home() {
                                 As you can maybe see, with for each loops, you do <b>not</b> get access to the index the element has. Therefore, only use a for each 
                                 loop when you know that the index is <b>not</b> necessary.
                             </p>
-                            <h4 className={"text-center text-lg"}>
-                                <b>Putting it all together: </b> Make it only print out numbers at an even index. 
-                                Likewise, make it only print out numbers at an odd index.
-                            </h4>
+                            <QuizQuestion question={"Write a loop to only print out numbers at an even index."} aCode={quizQuestionAnswer} 
+                                          explanation={"Using the iterator 'i' in the for loop, we can decide whether to print out that index. " +
+                                              "After determining whether to use the index, we use string concatenation to get the element at that index."}/>
                     </div>
                     <NextSection currentArticle={"Arrays"}/>
                 </div>
