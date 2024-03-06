@@ -11,13 +11,13 @@ const QuizQuestion = ({ question, qCode, aCode, explanation }) => {
 
   return (
       <div>
-        <div className={`card outline-0 py-0 px-0 gap-2 my-0`}>
-            <p className={`my-1`}>Putting it all together: {question}</p>
+        <div className={`card outline-0 py-0 px-0`}>
+            <p>Putting it all together: {question}</p>
             {qCode != null && <SyntaxHighlighter language="csharp" code={qCode} style={nightOwl} useInlineStyles={true}/> }
-            <button className={"bg-blue-500 hover:bg-blue-700 text-white p-3 h-fit rounded-2xl max-xs:my-1"} onClick={toggleAnswer}>Toggle Answer</button>
+            <button className={"bg-blue-500 hover:bg-blue-700 text-white p-3 h-fit rounded-2xl"} onClick={toggleAnswer}>Toggle Answer</button>
         </div>
         {show && 
-            <div className={`card p-1 mt-2 items-center`}>
+            <div className={`card items-center`}>
                 <p>
                     {explanation}
                 </p>
