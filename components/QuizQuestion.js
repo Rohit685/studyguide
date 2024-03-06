@@ -14,10 +14,10 @@ const QuizQuestion = ({ question, qCode, aCode, explanation }) => {
         <div className={`card outline-0 py-0 px-0`}>
             <p>Putting it all together: {question}</p>
             {qCode != null && <SyntaxHighlighter language="csharp" code={qCode} style={nightOwl} useInlineStyles={true}/> }
-            <button className={"bg-blue-500 hover:bg-blue-700 text-white p-3 h-fit rounded-2xl"} onClick={toggleAnswer}>Toggle Answer</button>
+            <button className={"bg-blue-600 hover:bg-blue-700 text-white p-3 h-fit rounded-2xl"} onClick={toggleAnswer}>{show ? "Close" : "Open"} Answer</button>
         </div>
         {show && 
-            <div className={`card items-center`}>
+            <div className={`card rounded-xl`}>
                 <p>
                     {explanation}
                 </p>
