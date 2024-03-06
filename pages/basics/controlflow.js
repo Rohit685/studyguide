@@ -235,7 +235,7 @@ export default function Home() {
                         C# goes in <b>sequential</b> order unless otherwise specified by different structures.
                         There are 3 main types of control structures.
                     </p>
-                    <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                    <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                         <div className="flex flex-col space-y-1 ml-3">
                             <li>Conditional Statements</li>
                             <li>Iterative Statements (Loops)</li>

@@ -47,7 +47,7 @@
     @apply text-2xl text-center
   }
   p {
-    @apply text-lg text-left bg-gray-700 rounded-2xl p-3 mb-3 mt-3 w-fit 
+    @apply text-lg text-left bg-gray-700 rounded-2xl p-3 my-3 w-fit 
   }
   li{
     @apply w-fit

@@ -50,7 +50,7 @@ export default function Home() {
                             complexity of a program.
                             Here are the main parts of a method:
                         </p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3">
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>Method Signature</li>
                                 <li>Parameters</li>
