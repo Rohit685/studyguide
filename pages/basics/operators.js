@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
-
+import QuizQuestion from "@/components/QuizQuestion";
 
 
 const aOperators  = `int a = 2;
@@ -126,6 +126,10 @@ export default function Home() {
                             </div>
                         </div>
                         <SyntaxHighlighter language="csharp" code={lOperators} style={nightOwl} useInlineStyles={true}/>
+                        <QuizQuestion question={"What does this expression evaluate to if x = -1 and y = 1?"} qCode={`bool result = (x > 0 && y < 0) || (x < 0 && y > 0); `} 
+                                      explanation={"This expression evaluates to true. The first block in parenthesis evaluates to false. The second block evaluates to true." +
+                                          "Because the operation outside of any parenthesis is OR, only one of the blocks has to be true making this expression true."} 
+                                      aCode={`(-1 > 1 && 1 < 0) || (-1 < 0 && 1 > 0)`}/>
                     </div>
                     <div className={"card"}>
                         <h3>Adding functionality to our bank account</h3>
