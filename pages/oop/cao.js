@@ -54,7 +54,7 @@ export default function Home() {
                             For example, we could represent a car as a class in C#.
                         </p>
                         <p>Let's first ask ourselves, What does a car have?</p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>Owner - a person's name</li>
                                 <li>Make - such as Lexus, Honda, Tesla</li>
@@ -75,7 +75,7 @@ export default function Home() {
                             Public is the <b>scope</b> of the variable. It is an example of an access modifier.
                         </p>
                         <h3>Different access modifiers </h3>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3">
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>Public variables can be accessed from any class and any external project.</li>
                                 <li>

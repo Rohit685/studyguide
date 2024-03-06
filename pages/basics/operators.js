@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 
 
 
@@ -85,7 +86,7 @@ export default function Home() {
                             operands.
                             C# provides a wide range of operators for performing various tasks, including mathematical
                             calculations, logical operations, and more. </p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                             <h3 className={"text-xl text-left"}>Arithmetic Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>+ -&gt; Addition</li>
@@ -101,7 +102,7 @@ export default function Home() {
                             For example..</p>
                         <SyntaxHighlighter language="csharp" code={asOperators} style={nightOwl}
                                            useInlineStyles={true}/>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                             <h3 className={"text-xl text-left"}>Comparison Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>== -&gt; Equal To</li>
@@ -117,7 +118,7 @@ export default function Home() {
                             </div>
                         </div>
                         <SyntaxHighlighter language="csharp" code={cOperators} style={nightOwl} useInlineStyles={true}/>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                             <h3 className={"text-xl text-left"}>Logical Operators</h3>
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li>! -&gt; Not</li>
@@ -126,6 +127,7 @@ export default function Home() {
                             </div>
                         </div>
                         <SyntaxHighlighter language="csharp" code={lOperators} style={nightOwl} useInlineStyles={true}/>
+                        <QuizQuestion question={"What does this expression evaluate to if x = -1 and y = 1?"} qCode={`bool result = (x > 0 && y < 0) || (x < 0 && y > 0); `} explanation={"true"}/>
                     </div>
                     <div className={"card"}>
                         <h3>Adding functionality to our bank account</h3>

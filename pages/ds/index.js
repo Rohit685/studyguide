@@ -17,7 +17,7 @@ export default function Home() {
                             In this section, you will learn the final piece of basic C#, data structures. You will
                             learn:
                         </p>
-                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 mt-3 w-fit">
+                        <div className="space-y-2 bg-gray-700 rounded-2xl p-3 w-fit">
                             <div className="flex flex-col space-y-1 ml-3">
                                 <li><a href={"/ds/arrays"}>Arrays</a></li>
                                 <li><a href={"/ds/lists"}>Lists</a></li>
