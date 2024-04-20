@@ -110,7 +110,7 @@
 
 @layer components {
   .card {
-    @apply rounded-2xl max-w-[1300px] mb-3 p-3;
+    @apply rounded-2xl max-w-[1300px] mb-3 p-7;
     outline: 1px solid hsl(var(--border));
   }
 }

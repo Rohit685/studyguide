@@ -6,6 +6,7 @@ const TOC = () => {
             <div className="navbar rounded-2xl border mb-3">
                 <div className="flex justify-evenly flex-1 px-2">
                     <div className="flex items-stretch">
+                        <a className="btn btn-ghost rounded-btn" href={"/"}>Home</a>
                         <a className="btn btn-ghost rounded-btn" href={"/setupenv"}>Getting Started</a>
                         <div className="dropdown">
                             <div tabIndex="0" role="button" className="btn btn-ghost rounded-btn">Basics of C#</div>
