@@ -29,6 +29,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation }) => {
       <div className="collapse collapse-plus quizContainerColor my-3">
           <input type="checkbox"/>
           <div className="collapse-title">
+              <h5 className={"px-1"}>Click to reveal answer!</h5>
               <p>Putting it all together: {question}</p>
               {qCode != null && <SyntaxHighlighter language="csharp" code={qCode} style={nightOwl} useInlineStyles={true}/> }
           </div>
