@@ -7,7 +7,6 @@ function NextSection({currentArticle}) {
 }
 const tocOrder = [
     "Setting up Dev Environment",
-    "C# Basics",
     "Variables and Data Types",
     "Methods",
     "Console Functions",
@@ -15,13 +14,11 @@ const tocOrder = [
     "Working with Strings",
     "Control Flow",
     "Mini Project 1",
-    "Object Oriented Programming",
     "Classes and Objects",
     "Constructors",
     "Methods/Functions",
     "Static vs Non-Static",
     "Mini Project 2",
-    "Data Structures",
     "Arrays",
     "Lists",
     "Mini Project 2 Part 2",
