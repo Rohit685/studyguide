@@ -57,6 +57,11 @@ const maincs = ` static void Main(string[] args)
     }
 }`
 
+const changeOwnerCar = `public void ChangeOwner(Car car) 
+{
+    Owner = car.Owner;
+}`
+
 export default function Home() {
     return (
         <>
@@ -88,9 +93,17 @@ export default function Home() {
                             </p>
                             <SyntaxHighlighter language = "csharp" style={nightOwl} code={`Console.WriteLine(car.Owner);`} useInlineStyles={true}/>
                             <p><b>Note:</b> we did not need parenthesis because Owner is not a method but a variable inside the Car class.</p>
-                            <p>This should return <b>Jane Doe</b>.
+                            <p>This should return <b>Jane Doe</b>.</p>
+                            <h3>Overloading Methods</h3>
+                            <p>Just like constructors, we can overload methods. It carries the same principles. 
+                                If we wanted to pass in a Car instance for the ChangeOwner() method instead of a String. 
+                                We are able to both at the same time.
                             </p>
-                    </div>
+                           <SyntaxHighlighter language = "csharp" style={nightOwl} code={changeOwnerCar} useInlineStyles={true}/>
+                           <p>We would get the same type of <a href="https://ibb.co/9btdxYs" target={"_blank"}>error</a> as we did in constructors if we tried to make two ChangeOwner methods with 1 String parameter.</p>
+                           
+
+                   </div>
                    <div className={"card"}>
                             <h3>Adding functions to our bank account class</h3>
                             <p>In our bank account class, we added the DepositBalance and WithdrawBalance into our Program.cs. 

@@ -45,6 +45,7 @@ export default function Home() {
                                 The basic constructor for our car class from the last page would be this: 
                             </p>
                             <SyntaxHighlighter language = "csharp" style={nightOwl} code={carconstructor} useInlineStyles={true}/>
+                            <h3>Overloading Constructors</h3>
                             <p>
                                 Now sometimes, we want to give the user to option to insert certain parameters but not other parameters. 
                                 This is where overloading comes into play. Overloading constructors allows us to have multiple constructors. 
@@ -59,7 +60,7 @@ export default function Home() {
                             </p>
                             <p>
                                 If you try and make a new constructor with 6 strings, C# will give you an error saying that this is not possible.  
-                                <a href="https://ibb.co/9btdxYs" target={"_blank"}>ERROR</a>
+                                <a href="https://ibb.co/9btdxYs" target={"_blank"} className={"ml-1"}>ERROR</a>
                             </p>
                             <p>As the image shows, the error says "parameter types" not parameter names.</p>
                     </div>
