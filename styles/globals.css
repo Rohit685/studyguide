@@ -86,13 +86,18 @@
   .right {
     flex: 1;
   }
+  
+  .quizContainerColor {
+    background-color: rgba(242, 161, 199, 0.08);
+  }
+  
   pre {
     border-radius: 1rem !important;
     width: fit-content !important;
     background-color: rgba(242, 161, 199, 0.08) !important;
     text-shadow: none !important;
     color: white !important;
-    padding:12px !important;
+    @apply my-3 !important;
   }  
   code {
     text-shadow: none !important;
