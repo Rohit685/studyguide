@@ -44,7 +44,16 @@ export default function Home() {
             <h3>
               Login
             </h3>
-            <Auth supabaseClient={supabase} appearance={{theme: ThemeSupa}} theme="dark" />
+            <Auth
+                supabaseClient={supabase}
+                appearance={{
+                    style: {
+                        button: { background: '0f1729', color: 'white', borderRadius: "0.5rem", padding:"0.5rem"},
+                        anchor: { color: '#93c5fd' },
+                        input: { borderRadius: "0.5rem", padding:"0.5rem"},
+                    },
+                }}
+            />
         </div>
       </div>
     </>
