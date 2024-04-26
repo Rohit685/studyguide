@@ -47,7 +47,7 @@ export default function Home() {
             <Auth
                 supabaseClient={supabase}
                 onlyThirdPartyProviders={true}
-                providers={['github']}
+                providers={['google','github']}
                 appearance={{
                     style: {
                         button: { background: '0f1729', color: 'white', borderRadius: "0.5rem", padding:"0.5rem"},
