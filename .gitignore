@@ -39,5 +39,6 @@ next-env.d.ts
 .idea
 
 /supabase/.temp
+/supabase/config.toml
 /supabase/.gitignore
 package-lock.json
