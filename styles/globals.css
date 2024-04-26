@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
  
+
+ [hidden] {
+    display:none;
+ }
+ 
 @layer base {
   :root {
     --background: 222, 47%, 11%;
@@ -52,6 +57,7 @@
   li{
     @apply w-fit
   }
+  
     /* width */
   ::-webkit-scrollbar {
     width: 0px;
