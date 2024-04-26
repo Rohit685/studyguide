@@ -46,13 +46,8 @@ const TOC = () => {
                                 <li><a href={"/ds/mp2p2"}>Project</a></li>
                             </ul>
                         </div>
-                        <button
-                            className={`btn btn-ghost rounded-btn ${session == null ? 'hidden' : ''}`}
-                            onClick={async () => {
-                                const {error} = await supabase.auth.signOut()
-                                if (error) console.log('Error logging out:', error.message)
-                            }}>
-                            Logout
+                        <button className={`btn btn-ghost rounded-btn ${session == null ? 'hidden' : ''}`}>
+                            {session != null && session.user.user_metadata.name}
                         </button>
                         <button
                             className={`btn btn-ghost rounded-btn ${session != null ? 'hidden' : ''}`}
