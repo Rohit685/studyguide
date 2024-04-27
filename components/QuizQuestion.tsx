@@ -87,8 +87,10 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
                   e.preventDefault(); // Prevent the form from submitting
                   // @ts-ignore
                   checkAnswer(e.target.answer.value); // Pass the input value to checkAnswer
-                  // @ts-ignore
-                  addStat(e.target.answer.value)
+                  if(session) {
+                      // @ts-ignore
+                      addStat(e.target.answer.value)
+                  }
               }}>
                   <input type="text" name="answer" placeholder="Type here" className={`input w-full max-w-xs bg-gray-700`}
                          disabled={state.wasAnswered}/>
