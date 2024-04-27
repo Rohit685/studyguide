@@ -97,6 +97,14 @@
     background-color: rgba(242, 161, 199, 0.08);
   }
   
+  .correct {
+    background-color: rgba(45, 145, 45, 0.08);
+  }
+ 
+  .incorrect {
+    background-color: rgba(210, 27, 27, 0.08);
+  }
+  
   pre {
     border-radius: 1rem !important;
     width: fit-content !important;

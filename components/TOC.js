@@ -46,9 +46,17 @@ const TOC = () => {
                                 <li><a href={"/ds/mp2p2"}>Project</a></li>
                             </ul>
                         </div>
-                        <button className={`btn btn-ghost rounded-btn ${session == null ? 'hidden' : ''}`}>
-                            {session != null && session.user.user_metadata.name}
-                        </button>
+                        <div className={`dropdown ${session == null ? 'hidden' : ''}`}>
+                            <button tabIndex={"0"} role={"button"} className={`btn btn-ghost rounded-btn`}>
+                                {session != null && session.user.user_metadata.name}
+                            </button>
+                            <ul tabIndex={"0"} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+                                <li><a onClick={async () => {
+                                    const {error} = await supabase.auth.signOut()
+                                    if (error) console.log('Error logging out:', error.message)
+                                }}>Log Out</a></li>
+                            </ul>
+                        </div>
                         <button
                             className={`btn btn-ghost rounded-btn ${session != null ? 'hidden' : ''}`}
                             onClick={() => {

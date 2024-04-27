@@ -21,6 +21,13 @@ const quizQuestionAnswer = `for (int i = 0; i < myArray.Length; i++)
     }    
 }`
 
+const quizQuestionQ = `for (int i = 0; i < myArray.Length; i++)
+{
+    if(_____) {
+        Console.WriteLine($"Element at index {i}: {myArray[i]}");
+    }    
+}`
+
 const foreachstruct = `foreach (elementType variable in collection)
 {
     // Statements to be executed for each element
@@ -85,9 +92,10 @@ export default function Home() {
                                 As you can maybe see, with for each loops, you do <b>not</b> get access to the index the element has. Therefore, only use a for each 
                                 loop when you know that the index is <b>not</b> necessary.
                             </p>
-                            <QuizQuestion question={"Write a loop to only print out numbers at an even index."} aCode={quizQuestionAnswer} 
-                                          explanation={"Using the iterator 'i' in the for loop, we can decide whether to print out that index. " +
-                                              "After determining whether to use the index, we use string concatenation to get the element at that index."}/>
+                            <QuizQuestion question={"Fill in the blank: "} qCode={quizQuestionQ} aCode={quizQuestionAnswer} 
+                                          explanation={"Using the index 'i' and modulus operator, we can decide whether to that index is even by checking whether the remainder is 0" +
+                                              "After determining whether to use the index, we use string concatenation to get the element at that index."} genericID={4}
+                                        correctAnswer={"i % 2 == 0"}/>
                     </div>
                     <NextSection currentArticle={"Arrays"}/>
                 </div>

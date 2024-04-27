@@ -13,7 +13,9 @@ export interface Database {
         Row: {
           id: number
           user_id: string
+          question_id: number
           question_name: string | null
+          user_answer: string | ""
           is_complete: boolean | false
           is_correct: boolean | false
           inserted_at: string
@@ -21,7 +23,9 @@ export interface Database {
         Insert: {
           id: number
           user_id: string
+          question_id: number
           question_name: string | null
+          user_answer: string | ""
           is_complete: boolean | false
           is_correct: boolean | false
           inserted_at: string
@@ -29,7 +33,9 @@ export interface Database {
         Update: {
           id: number
           user_id: string
+          question_id: number
           question_name: string | null
+          user_answer: string | ""
           is_complete: boolean | false
           is_correct: boolean | false
           inserted_at: string
