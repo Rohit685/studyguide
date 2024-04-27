@@ -17,7 +17,10 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
   const [state, setState] = useState<QuestionState>({wasCorrect: false, wasAnswered: false});
   
   function checkAnswer(answer) {
-    if(answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
+    answer = stripString(answer);
+    correctAnswer = stripString(correctAnswer);
+    correctAnswer = correctAnswer.replace("space", " ");
+    if(answer === correctAnswer) {
         setState({
             wasCorrect: true,
             wasAnswered: true
@@ -29,6 +32,10 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
             wasAnswered: true
         });
     }
+  }
+  
+  function stripString(string) {
+     return string.trim().toLowerCase().replace(/\s/g, "");
   }
   
   const supabase = useSupabaseClient();
