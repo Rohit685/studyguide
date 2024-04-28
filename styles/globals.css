@@ -49,7 +49,7 @@
     @apply underline
   }
   h3 {
-    @apply text-2xl text-center bg-gray-700 p-3 rounded-2xl w-fit mx-auto
+    @apply text-2xl text-center bg-gray-700 p-3 my-3 rounded-2xl w-fit mx-auto
   } 
   p {
     @apply text-lg text-left rounded-2xl px-1 my-3 w-fit 
