@@ -103,7 +103,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
               }}>
                   <input type="text" name="answer" placeholder="Type here" className={`input w-full max-w-xs bg-gray-700`}
                          disabled={state.wasAnswered}/>
-                  <button type="submit" className={"btn btn-neutral ml-1"}>Submit</button>
+                  <button type="submit" className={`btn btn-neutral ml-1 ${state.wasAnswered ? 'btn-disabled' : ''}`}>Submit</button>
               </form>
           </div>
           <div className="collapse-content">
