@@ -3,13 +3,12 @@ import {Database} from "@/lib/schema";
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 
-type Stats = Database['public']['Tables']['stats']['Row']
 
 export default function UserStats() {
   const supabase = useSupabaseClient();
   const session = useSession();
   const router = useRouter();  
-  const [userStats, setStats] = useState<Stats[]>([]);
+  const [userStats, setStats] = useState([]);
   const [percentCorrect, setPercent] = useState(0);
   
   useEffect(() => {
@@ -18,8 +17,10 @@ export default function UserStats() {
         .from('stats')
         .select('* ')
       if (error) console.log('error', error)
-      else if(stats.length > 0){
-          setPercent((stats.filter(obj => obj.is_correct).length / stats.length) * 100);
+      else if(stats.length > 0) {
+          let frac = stats.filter(obj => obj.is_correct).length / stats.length;
+          let percent = ((frac) * 100).toFixed(2)
+          setPercent(percent);
           setStats(stats)
       }
     }
