@@ -16,7 +16,7 @@ type Stats = Database['public']['Tables']['stats']['Row']
 const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, genericID}) => {
   const [state, setState] = useState<QuestionState>({wasCorrect: false, wasAnswered: false});
   
-  function checkAnswer(answer) {
+  function checkAnswer(answer) : boolean {
     answer = stripString(answer);
     correctAnswer = stripString(correctAnswer);
     correctAnswer = correctAnswer.replace("space", " ");
@@ -25,12 +25,14 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
             wasCorrect: true,
             wasAnswered: true
         });
+        return true;
     }
     else {
         setState({
             wasCorrect: false,
             wasAnswered: true
         });
+        return false;
     }
   }
   
@@ -58,6 +60,10 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
         });
       } else if(stats.length == 0) {
           setState({wasCorrect: false, wasAnswered: false})
+          setStat({
+              id: 0,
+              inserted_at: "",
+              user_id: session.user.id, question_id: genericID, question_name: question, user_answer: "", is_complete: false, is_correct: false})
       }
     }
     if(session) {
@@ -65,14 +71,14 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
     }
   }, [session]);
   
-  async function addStat(answer) {
+  async function addStat(answer, isCorrect) {
       let stat = {
           user_id: session.user.id,
           question_id: genericID,
           question_name: question,
           user_answer: answer,
           is_complete: true,
-          is_correct: state.wasCorrect
+          is_correct: isCorrect
       }
       const {error} = await supabase
           .from('stats')
@@ -94,10 +100,6 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
                   e.preventDefault(); // Prevent the form from submitting
                   // @ts-ignore
                   checkAnswer(e.target.answer.value); // Pass the input value to checkAnswer
-                  if(session) {
-                      // @ts-ignore
-                      addStat(e.target.answer.value)
-                  }
               }}>
                   <input type="text" name="answer" placeholder="Type here" className={`input w-full max-w-xs bg-gray-700`}
                          disabled={state.wasAnswered}/>
@@ -115,7 +117,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
     );
   }
   
-  if(!session || !state.wasAnswered) {
+  if(!session) {
       return questionWithoutSesssion();
   }
   
@@ -136,9 +138,13 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
               <form onSubmit={e => {
                   e.preventDefault(); // Prevent the form from submitting
                   // @ts-ignore
-                  checkAnswer(e.target.answer.value); // Pass the input value to checkAnswer
+                  let isCorrect = checkAnswer(e.target.answer.value); // Pass the input value to checkAnswer
+                  if(session) {
+                        // @ts-ignore
+                        addStat(e.target.answer.value, isCorrect);
+                  }
               }}>
-                  <input type="text" name="answer" value={`${stat != null ? stat.user_answer : "Type Here"}`} className={`input w-full max-w-xs bg-gray-700`}
+                  <input type="text" name="answer" placeholder={`${(stat != null && stat.is_complete) ? stat.user_answer : "Type Here"}`} className={`input w-full max-w-xs bg-gray-700`}
                          disabled={state.wasAnswered}/>
                   <button type="submit" className={`btn btn-neutral ml-1 ${state.wasAnswered ? 'btn-disabled' : ''}`}>Submit</button>
               </form>
