@@ -48,7 +48,7 @@ static double DepositBalance(double balance, double additionalBalance)
 
 const quizQuestion = `String name = "Garry Johnson";
 int number = 4;
-String book = "book";
+String books = "books";
 `
 
 export default function Home() {
@@ -62,7 +62,7 @@ export default function Home() {
                 <div>
                     <div className={"card"}>
                         <h3>Working with Strings</h3>
-                        <p>String manipulation is very important especially in console applictions. In this section, you will learn about how to manipulate strings.</p>
+                        <p>String manipulation is very important especially in console applications. In this section, you will learn about how to manipulate strings.</p>
                         
                         <h3>String Concatenation</h3>
                         <p>String concatenation in C# is the process of combining two or more strings to create a new string. 

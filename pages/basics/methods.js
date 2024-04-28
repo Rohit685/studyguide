@@ -114,7 +114,7 @@ export default function Home() {
                     
                     <div className={"card"}>
                             <p>C# has a lot of methods built in so that users do not have to reinvent the wheel.
-                            Later on, I teach you how to mainpulate strings and different types of data.
+                            Later on, I teach you how to manipulate strings and different types of data.
                             I also recommend going onto Google to see if a method already exists for what you want to do. 
                             Some good resources are <a href={"https://www.geeksforgeeks.org/"} target={"_blank"}>GeeksForGeeks </a>
                                 and <a href={"https://www.w3schools.com"} target={"_blank"}>W3 Schools. </a></p>

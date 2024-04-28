@@ -13,7 +13,7 @@ const TOC = () => {
                         <div className="dropdown">
                             <div tabIndex="0" role="button" className="btn btn-ghost rounded-btn">Basics of C#</div>
                             <ul tabIndex="0"
-                                className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+                                className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40 bg-secondary">
                                 <li><a href="/basics/dataandvars">Variables & Data Types</a></li>
                                 <li><a href="/basics/methods">Methods</a></li>
                                 <li><a href="/basics/console">Console Functions</a></li>
@@ -28,7 +28,7 @@ const TOC = () => {
                                 Programming
                             </div>
                             <ul tabIndex={"0"}
-                                className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+                                className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40 bg-secondary">
                                 <li><a href="/oop/cao">Classes and Objects</a></li>
                                 <li><a href="/oop/constructors">Constructors</a></li>
                                 <li><a href="/oop/methods">Methods</a></li>
@@ -40,7 +40,7 @@ const TOC = () => {
                             <div tabIndex={"0"} role={"button"} className={"btn btn-ghost rounded-btn"}>Data Structures
                             </div>
                             <ul tabIndex={"0"}
-                                className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+                                className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40 bg-secondary">
                                 <li><a href={"/ds/arrays"}>Arrays</a></li>
                                 <li><a href={"/ds/lists"}>Lists</a></li>
                                 <li><a href={"/ds/mp2p2"}>Project</a></li>
@@ -50,7 +50,7 @@ const TOC = () => {
                             <button tabIndex={"0"} role={"button"} className={`btn btn-ghost rounded-btn`}>
                                 {session != null && session.user.user_metadata.name}
                             </button>
-                            <ul tabIndex={"0"} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+                            <ul tabIndex={"0"} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40 bg-secondary">
                                 <li><a onClick={async () => {
                                     const {error} = await supabase.auth.signOut()
                                     if (error) console.log('Error logging out:', error.message)

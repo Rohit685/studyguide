@@ -49,10 +49,10 @@
     @apply underline
   }
   h3 {
-    @apply text-2xl text-center
-  }
+    @apply text-2xl text-center bg-gray-700 p-3 rounded-2xl w-fit mx-auto
+  } 
   p {
-    @apply text-lg text-left bg-gray-700 rounded-2xl p-3 my-3 w-fit 
+    @apply text-lg text-left rounded-2xl px-1 my-3 w-fit 
   }
   li{
     @apply w-fit
