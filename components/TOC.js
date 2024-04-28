@@ -44,6 +44,7 @@ const TOC = () => {
                                 <li><a href={"/ds/arrays"}>Arrays</a></li>
                                 <li><a href={"/ds/lists"}>Lists</a></li>
                                 <li><a href={"/ds/mp2p2"}>Project</a></li>
+                                <li><a href={"/ds/test"}>Check for Understanding</a></li>
                             </ul>
                         </div>
                         <div className={`dropdown ${session == null ? 'hidden' : ''}`}>

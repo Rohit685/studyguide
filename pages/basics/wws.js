@@ -83,7 +83,7 @@ export default function Home() {
                         <p>As you can see, there are a lot of ways to combine strings and add variables. It is personal preference. I prefer the middle method personally.</p>
                         <QuizQuestion question={"Make the sentence: \"Garry Johnson has 4 books\" using String Interpolation and assign it to the variable of type String, mySentence."}
                                       qCode={quizQuestion} aCode={`String mySentence = $"{name} has {number} {books}";`}  correctAnswer={`StringspacemySentence = $"{name} has {number} {books}";`}
-                                      explanation={"Make sure each variable has the {} around them. Before the starting quotation, do not forget the $ that signifies the string interpolation notation."} genericID={3}/>
+                                      explanation={"Make sure each variable has the {} around them. Before the starting quotation, do not forget the $ that signifies the string interpolation notation."} genericID={3} caseSensitive={false}/>
                     </div>
                     <div className={"card"}>
                         <h3>Other methods</h3>

@@ -307,7 +307,7 @@ export default function Home() {
                     </p>
                     <QuizQuestion question={"Fill in the blank so only even numbers are printed."} qCode={"for (int i = 0; i <= 10; i += __) { \n\tConsole.WriteLine(i); \n}"} 
                                   explanation={"The answer to this question involves switching the increment so it increases by 2 instead of 1. The output would be: 0, 2, 4, 6, 8, 10. Each number being on a new line."} 
-                                  aCode={quizForLoopAnswer} genericID={2} correctAnswer={"2"}/>
+                                  aCode={quizForLoopAnswer} genericID={2} correctAnswer={"2"} caseSensitive={false}/>
                     <br/>
                     <h3>While Loops</h3>
                     <p>Basic While Loop Structure</p>

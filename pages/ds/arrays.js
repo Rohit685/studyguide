@@ -95,7 +95,7 @@ export default function Home() {
                             <QuizQuestion question={"Fill in the blank so that this code block only prints out numbers at an even index from the array, myArray."} qCode={quizQuestionQ} aCode={quizQuestionAnswer} 
                                           explanation={"Using the index 'i' and modulus operator, we can decide whether to that index is even by checking whether the remainder is 0" +
                                               "After determining whether to use the index, we use string concatenation to get the element at that index."} genericID={4}
-                                        correctAnswer={"myArray.Length"}/>
+                                        correctAnswer={"myArray.Length"} caseSensitive={true}/>
                     </div>
                     <NextSection currentArticle={"Arrays"}/>
                 </div>

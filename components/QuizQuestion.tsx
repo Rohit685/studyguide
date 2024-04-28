@@ -13,12 +13,16 @@ type QuestionState = {
 type Stats = Database['public']['Tables']['stats']['Row']
 
 
-const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, genericID}) => {
+const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, genericID, caseSensitive}) => {
   const [state, setState] = useState<QuestionState>({wasCorrect: false, wasAnswered: false});
   
   function checkAnswer(answer) : boolean {
     answer = stripString(answer);
     correctAnswer = stripString(correctAnswer);
+    if(!caseSensitive) {
+        answer = answer.toLowerCase();
+        correctAnswer = correctAnswer.toLowerCase();
+    }
     correctAnswer = correctAnswer.replace("space", " ");
     if(answer === correctAnswer) {
         setState({
@@ -37,7 +41,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
   }
   
   function stripString(string) {
-     return string.trim().toLowerCase().replace(/\s/g, "");
+     return string.trim().replace(/\s/g, "");
   }
   
   const supabase = useSupabaseClient();
@@ -93,7 +97,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
       return (
       <div className={`collapse  ${state.wasAnswered ? '' : '!quizContainerColor'} ${state.wasAnswered ? 'collapse-open' :  'collapse-closed'}  ${state.wasCorrect ? 'correct' : 'incorrect'} my-3`}>
           <div className="collapse-title">
-              <p>Putting it all together: {question}</p>
+              <p>{question}</p>
               {qCode != null &&
                   <SyntaxHighlighter language="csharp" code={qCode} style={nightOwl} useInlineStyles={true}/>}
               <form onSubmit={e => {
@@ -132,7 +136,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
   return (
       <div className={`collapse  ${state.wasAnswered ? '' : '!quizContainerColor'} ${state.wasAnswered ? 'collapse-open' :  'collapse-closed'}  ${state.wasCorrect ? 'correct' : 'incorrect'} my-3`}>
           <div className="collapse-title">
-              <p>Putting it all together: {question}</p>
+              <p>{question}</p>
               {qCode != null &&
                   <SyntaxHighlighter language="csharp" code={qCode} style={nightOwl} useInlineStyles={true}/>}
               <form onSubmit={e => {
