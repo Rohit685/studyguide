@@ -1,15 +1,23 @@
 import Head from "next/head";
-import {useSession, useSupabaseClient} from "@supabase/auth-helpers-react";
+import {useSessionContext, useSupabaseClient} from "@supabase/auth-helpers-react";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import QuizQuestion from "@/components/QuizQuestion";
 
 
 export default function DSTest() {
-    const session = useSession();
+    const {session, isLoading} = useSessionContext();
     const supabase = useSupabaseClient();
     const router = useRouter();
     
+    
+    if(isLoading) {
+        return (
+            <div className={"flex items-center pt-5"}>
+            <span className="loading loading-spinner loading-lg mx-auto"></span>
+                </div>
+        )
+    }
     
     if(!session) {
         return (
