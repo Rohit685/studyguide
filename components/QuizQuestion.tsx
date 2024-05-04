@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import {set} from "yaml/dist/schema/yaml-1.1/set";
-import {useSession, useSupabaseClient} from "@supabase/auth-helpers-react";
+import {useSessionContext, useSupabaseClient} from "@supabase/auth-helpers-react";
 import {Database} from "@/lib/schema";
 
 
@@ -45,7 +45,7 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
   }
   
   const supabase = useSupabaseClient();
-  const session = useSession()
+  const {session, isLoading} = useSessionContext();
   const supabaseDB = useSupabaseClient<Database>()
   const [stat, setStat] = useState<Stats>(null);
 
@@ -120,7 +120,15 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
     );
   }
   
-  if(!session) {
+  if(isLoading) {
+      return (
+          <div className={"collapse quizContainerColor py-3"}>
+            <span className="loading loading-spinner loading-lg px-3"></span>
+          </div>
+      );
+  }
+  
+  if(!isLoading && !session) {
       return questionWithoutSesssion();
   }
   
