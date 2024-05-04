@@ -60,9 +60,8 @@ export default function UserStats() {
                 </tr>
                 </thead>
                 <tbody>
-                {/* row 1 */}
                 {userStats.map((stat) => (
-                    <tr className={`${stat.is_correct ? "correct" : "incorrect"}`}>
+                    <tr key={stat.id} className={`${stat.is_correct ? "correct" : "incorrect"}`}>
                         <td>
                             <div className="flex items-center">
                                 <div>
