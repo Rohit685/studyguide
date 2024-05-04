@@ -66,7 +66,7 @@ export default function Home() {
                             <p>We will implement user input in our bank account simulation in the next section!</p>
                         <QuizQuestion question={"Yes/No: Is this code correct?"} qCode={quizQ} caseSensitive={false} correctAnswer={"No"} 
                                       genericID={7} explanation={"This code is not correct because the ReadLine() method returns a string. However," +
-                            "it is being set to an integer, age."} aCode={undefined}/>
+                            " it is being set to an integer, age."} aCode={undefined}/>
                                       
                     </div>
                     <NextSection currentArticle={"Console Functions"}/>
