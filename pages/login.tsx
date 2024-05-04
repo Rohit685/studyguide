@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useSessionContext, useSupabaseClient } from '@supabase/auth-helpers-react'
 import {Auth, ThemeMinimal, ThemeSupa} from '@supabase/auth-ui-react'
 import {useEffect, useState} from "react";
 import {Database} from "@/lib/schema";
@@ -7,30 +7,17 @@ import {useRouter} from "next/router";
 
 type Stats = Database['public']['Tables']['stats']['Row']
 export default function Home() {
-  const session = useSession()
+  const {session, isLoading} = useSessionContext()
   const supabase = useSupabaseClient();
   const router = useRouter()
-  // const supabaseDB = useSupabaseClient<Database>()
-  // const [stats, setStats] = useState<Stats[]>([])
-  // const [newTaskText, setNewTaskText] = useState('')
-  // const [errorText, setErrorText] = useState('')
-  //
-  // useEffect(() => {
-  //   const fetchTodos = async () => {
-  //     const { data: stats, error } = await supabase
-  //       .from('stats')
-  //       .select('*')
-  //       .order('id', { ascending: true })
-  //
-  //     if (error) console.log('error', error)
-  //     else {
-  //         setStats(stats)
-  //         console.log(stats)
-  //     }
-  //   }
-  //
-  //   fetchTodos()
-  // }, [supabase])
+
+    if(isLoading) {
+        return (
+            <div className={"flex items-center pt-5"}>
+            <span className="loading loading-spinner loading-lg mx-auto"></span>
+                </div>
+        )
+    }
     if(session) router.push('/')
   return (
     <>

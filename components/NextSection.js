@@ -21,6 +21,7 @@ const tocOrder = [
     "Mini Project 2",
     "Arrays",
     "Lists",
+    "Check for Understanding",
     "Mini Project 2 Part 2",
 ]
 
@@ -43,6 +44,7 @@ const tocDict = {
     "Mini Project 2" : "/oop/mp2",
     "Arrays" : "/ds/arrays",
     "Lists" : "/ds/lists",
+    "Check for Understanding" : "/ds/test",
     "Mini Project 2 Part 2" : "/ds/mp2p2",
 }
 

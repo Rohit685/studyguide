@@ -3,21 +3,43 @@ import {useSessionContext, useSupabaseClient} from "@supabase/auth-helpers-react
 import {useRouter} from "next/router";
 import Link from "next/link";
 import QuizQuestion from "@/components/QuizQuestion";
+import React, {useEffect, useState} from "react";
+import {Database} from "@/lib/schema";
+import NextSection from "@/components/NextSection";
 
+type Stats = Database['public']['Tables']['stats']['Row']
 
 export default function DSTest() {
     const {session, isLoading} = useSessionContext();
     const supabase = useSupabaseClient();
     const router = useRouter();
+    const [grabbingPreviousQuestions, setGrabbingPreviousQuestions] = useState<Stats[]>(null);
     
     
-    if(isLoading) {
+    useEffect(() => {
+        const fetchTodos = async () => {
+            const { data: stats, error } = await supabase
+                .from('stats')
+                .select('* ')
+            if (error) console.log('error', error)
+            else setGrabbingPreviousQuestions(stats)
+        }
+        
+        if(!isLoading && session) {
+            fetchTodos()
+        }
+    }, [session])
+    
+    
+    if(isLoading || (session && (!grabbingPreviousQuestions))) {
         return (
             <div className={"flex items-center pt-5"}>
-            <span className="loading loading-spinner loading-lg mx-auto"></span>
-                </div>
+                <span className="loading loading-spinner loading-lg mx-auto"></span>
+            </div>
         )
     }
+    
+    
     
     if(!session) {
         return (
@@ -37,6 +59,7 @@ export default function DSTest() {
             
             <div>
                 <h3>Check for Understanding: Arrays & Lists</h3>
+                {grabbingPreviousQuestions && grabbingPreviousQuestions.length === 0 && <p className={"mx-auto"}>It is recommended you complete previous questions while logged in.</p>}
                 <div className={"card"}>
                     <QuizQuestion question={"How do you access the third element in an array named arr?"} qCode={`int number = ____;`}
                                   aCode={`int number = arr[2];`} explanation={"Because arrays and lists use 0 based index, you have to use index 2 to get the third element."} 
@@ -58,9 +81,15 @@ export default function DSTest() {
                                   explanation={undefined} correctAnswer={`string[]spacestringArr = newspacestring[3];`} genericID={985}
                                   caseSensitive={false}
                     />
-                    
+                    {grabbingPreviousQuestions && !grabbingPreviousQuestions.find(stat => stat.question_id === 5)?.is_correct ? 
+                        <QuizQuestion
+                            question={"How many times does the Remove method remove an element from a list if there are multiple occurrences of that element?"}
+                            qCode={undefined} aCode={undefined} explanation={"The Remove method only removes the first occurence of the specified element."} correctAnswer={"1"}
+                            genericID={986} caseSensitive={false}                        
+                        /> : null
+                    }
                 </div>
-                
+                <NextSection currentArticle={"Check for Understanding"}/>
             </div>
             
             

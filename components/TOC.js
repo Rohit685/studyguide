@@ -43,8 +43,8 @@ const TOC = () => {
                                 className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40 bg-secondary">
                                 <li><a href={"/ds/arrays"}>Arrays</a></li>
                                 <li><a href={"/ds/lists"}>Lists</a></li>
-                                <li><a href={"/ds/mp2p2"}>Project</a></li>
                                 <li><a href={"/ds/test"}>Check for Understanding</a></li>
+                                <li><a href={"/ds/mp2p2"}>Project</a></li>
                             </ul>
                         </div>
                         <div className={`dropdown ${session == null ? 'hidden' : ''}`}>
@@ -52,6 +52,7 @@ const TOC = () => {
                                 {session != null && session.user.user_metadata.name}
                             </button>
                             <ul tabIndex={"0"} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-40 bg-secondary">
+                                <li><a href={"/profile"}>Profile</a></li>
                                 <li><a onClick={async () => {
                                     const {error} = await supabase.auth.signOut()
                                     if (error) console.log('Error logging out:', error.message)

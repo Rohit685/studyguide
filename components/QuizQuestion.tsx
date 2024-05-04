@@ -105,9 +105,8 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
                   // @ts-ignore
                   checkAnswer(e.target.answer.value); // Pass the input value to checkAnswer
               }}>
-                  <input type="text" name="answer" placeholder="Type here" className={`input w-full max-w-xs bg-gray-700`}
-                         disabled={state.wasAnswered}/>
-                  <button type="submit" className={`btn btn-neutral ml-1 ${state.wasAnswered ? 'btn-disabled' : ''}`}>Submit</button>
+                  <input type="text" name="answer" placeholder="Type here" className={`input w-full max-w-xs bg-gray-700`}/>
+                  <button type="submit" className={`btn btn-neutral ml-1`}>Submit</button>
               </form>
           </div>
           <div className="collapse-content">
@@ -143,14 +142,13 @@ const QuizQuestion = ({ question, qCode, aCode, explanation, correctAnswer, gene
                   e.preventDefault(); // Prevent the form from submitting
                   // @ts-ignore
                   let isCorrect = checkAnswer(e.target.answer.value); // Pass the input value to checkAnswer
-                  if(session) {
+                  if(session && !state.wasAnswered) {
                         // @ts-ignore
                         addStat(e.target.answer.value, isCorrect);
                   }
               }}>
-                  <input type="text" name="answer" placeholder={`${(stat != null && stat.is_complete) ? stat.user_answer : "Type Here"}`} className={`input w-full max-w-xs bg-gray-700`}
-                         disabled={state.wasAnswered}/>
-                  <button type="submit" className={`btn btn-neutral ml-1 ${state.wasAnswered ? 'btn-disabled' : ''}`}>Submit</button>
+                  <input type="text" name="answer" placeholder={`${(stat != null && stat.is_complete) ? stat.user_answer : "Type Here"}`} className={`input w-full max-w-xs bg-gray-700`}/>
+                  <button type="submit" className={`btn btn-neutral ml-1`}>Submit</button>
               </form>
           </div>
           <div className="collapse-content">
