@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
-
+import QuizQuestion from "@/components/QuizQuestion";
 const code = `public static int Add(int a, int b)
 {
     int result = a + b;
@@ -95,6 +95,8 @@ export default function Home() {
                             <SyntaxHighlighter language="csharp" style={nightOwl} code={fullCode} useInlineStyles={true}/>
                             <p>Return</p>
                             <SyntaxHighlighter style={nightOwl} code={`6`} useInlineStyles={true}/>
+                        <QuizQuestion question={"What is the return type of the method?"} qCode={"public static void CallMeMaybe(PhoneNumber phone, string callerName);"} caseSensitive={true}
+                    aCode={undefined} correctAnswer={"void"} genericID={6} explanation={"Not all methods return a value. In C#, if a method declaration has void in it, that means no value is returned."}/>
                     </div>
 
                     <div className={"card"}>
@@ -111,7 +113,6 @@ export default function Home() {
                             For now, it's important to learn how to create methods and call the methods.</p>
                             <SyntaxHighlighter language={"csharp"} style={nightOwl} code={instanceMethod} useInlineStyles={true}/>
                     </div>
-                    
                     <div className={"card"}>
                             <p>C# has a lot of methods built in so that users do not have to reinvent the wheel.
                             Later on, I teach you how to manipulate strings and different types of data.

@@ -39,7 +39,6 @@ export default function UserStats() {
   }  
     
     
-    // @ts-ignore
     return (
     <div>
         <div className="stats">
