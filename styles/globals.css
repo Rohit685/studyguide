@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
  
+
+ [hidden] {
+    display:none;
+ }
+ 
+ input::placeholder {
+   @apply text-gray-200;
+ }
+ 
+ 
 @layer base {
   :root {
     --background: 222, 47%, 11%;
@@ -35,7 +45,7 @@
     
   }
   .main {
-      @apply flex flex-col justify-between items-center min-h-screen leading-[1.5em] pt-4 p-3;
+      @apply flex flex-col flex-wrap items-center min-h-screen leading-[1.5em] pt-4 p-3 overflow-x-scroll;
   }
   a{
     @apply text-blue-300;
@@ -44,23 +54,24 @@
     @apply underline
   }
   h3 {
-    @apply text-2xl text-center
-  }
+    @apply text-2xl text-center bg-gray-700 p-3 my-3 rounded-2xl w-fit mx-auto
+  } 
   p {
-    @apply text-lg text-left bg-gray-700 rounded-2xl p-3 my-3 w-fit 
+    @apply text-lg text-left rounded-2xl px-1 my-3 w-fit 
   }
   li{
     @apply w-fit
   }
+  
     /* width */
   ::-webkit-scrollbar {
-    width: 0px;
-    height: 0;
+    width: 2px;
+    height: 5px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #ca2b2b
+    background: var(--background)
   }
   
   /* Handle */
@@ -88,13 +99,21 @@
   }
   
   .quizContainerColor {
-    background-color: rgba(242, 161, 199, 0.08);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  .correct {
+    background-color: rgba(44, 196, 44, 0.08);
+  }
+ 
+  .incorrect {
+    background-color: rgba(255, 0, 0, 0.08);
   }
   
   pre {
     border-radius: 1rem !important;
     width: fit-content !important;
-    background-color: rgba(242, 161, 199, 0.08) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
     text-shadow: none !important;
     color: white !important;
     @apply my-3 !important;
@@ -103,12 +122,12 @@
     text-shadow: none !important;
     color: #d6deeb !important;
   }
-  @media (max-width: 768px) {
-    img{
-      display: none;
+  @media (max-width: 1300px) {
+    .card{
+      @apply max-w-[1300px] !important;
     }
-    pre {
-      display: none;
+    .main {
+      @apply w-fit;
     }
   }
 }

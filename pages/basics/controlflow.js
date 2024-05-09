@@ -61,6 +61,34 @@ switch (choice)
 }
 `
 
+const switchstateQ = `Console.WriteLine("Choose an option:");
+Console.WriteLine("0. View Profile");
+Console.WriteLine("1. Edit Profile");
+Console.WriteLine("2. Logout");
+
+int choice = int.Parse(Console.ReadLine());
+
+switch (choice)
+{
+    case 0:
+        Console.WriteLine("Viewing Profile");
+        break;
+    case 1:
+        Console.WriteLine("Editing Profile");
+        break;
+    case 2:
+        Console.WriteLine("Logging out");
+        break;
+    default:
+        Console.WriteLine("Invalid choice. Please select a valid option.");
+        break;
+}
+`
+
+
+
+
+
 const ternary = `int number = 10;
 String result = (number % 2 == 0) ? "Even" : "Odd";`
 
@@ -282,13 +310,18 @@ export default function Home() {
                     <p>The default option is used if none of the cases are met and will execute the default code. 
                         If a case is met, the default condition is <b>not</b> executed.
                     </p>
+                    <QuizQuestion question={"What case would be executed if the user inputted 0? Please write the output of the case it would execute."}
+                                  qCode={switchstateQ} correctAnswer={"Viewing Profile"}
+                                  explanation={"The user would want to view their profile. " +
+                                      "The user input would match the first case of 0."} 
+                                  aCode={undefined} genericID={8} caseSensitive={false}/>
                 </div>
 
                 <div className={"card"}>
                     <h3>Loops</h3>
                     <p>Loops are used in C# when you want to repeat certain lines of code. There are two main loops in C# loops. 
                         For loops and while loops. For loops are used <b>when you know the number of iterations that will be executed.</b> While loops are used 
-                    when you do <b>not</b> know the number of iterations. However, any for loop implementation can be recreated using a while loop. Loops are very 
+                    when you do <b>not</b> know the number of iterations. An iteration is considered a block of code being executed once. However, any for loop implementation can be recreated using a while loop. Loops are very 
                         common when iterating through lists and data structures. 
                     </p>
                     <h3>For Loops</h3>
@@ -305,9 +338,9 @@ export default function Home() {
                     <p>i is a very common variable used for the counter in for loops. The variable can be named anything you want.
                     In this example, the counter starts at 1 and goes till it is less than or equal to 5. Each time, it prints out the counter.
                     </p>
-                    <QuizQuestion question={"Using a for loop, print out only even numbers from 0-10"} 
-                                  explanation={"The answer to this question involves switching the increment so it increases by 2 instead of 1."} 
-                                  aCode={quizForLoopAnswer}/>
+                    <QuizQuestion question={"Fill in the blank so only even numbers are printed."} qCode={"for (int i = 0; i <= 10; i += __) { \n\tConsole.WriteLine(i); \n}"} 
+                                  explanation={"The answer to this question involves switching the increment so it increases by 2 instead of 1. The output would be: 0, 2, 4, 6, 8, 10. Each number being on a new line."} 
+                                  aCode={quizForLoopAnswer} genericID={2} correctAnswer={"2"} caseSensitive={false}/>
                     <br/>
                     <h3>While Loops</h3>
                     <p>Basic While Loop Structure</p>
@@ -317,6 +350,8 @@ export default function Home() {
                     <SyntaxHighlighter language = "csharp" style={nightOwl} code={basicWhile} useInlineStyles={true}/>
                     <p>Sample return</p>
                     <SyntaxHighlighter style={nightOwl} code={whileReturn} useInlineStyles={true}/>
+                    <QuizQuestion question={"How many times will the loop run? If the answer is forever, write forever. Else, just write the number of iterations."} qCode={"while (true) { \n\tConsole.WriteLine(\"Hello\"); \n}"}
+                    aCode={undefined} correctAnswer={"forever"} genericID={9} caseSensitive={false} explanation={"The loop would run forever because there is no condition stopping the while loop. True is always true."}/>
                 </div>
                 
                 <div className={"card"}>

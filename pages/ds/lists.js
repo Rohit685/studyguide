@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 
 const getElement = `myList[0] // 0 is the INDEX and will return the FIRST element in the list`
 
@@ -63,6 +64,10 @@ export default function Home() {
                             </p>
                             <h3>Code Example</h3>
                             <SyntaxHighlighter language = "csharp" style={nightOwl} code={code} useInlineStyles={true}/>
+                        <QuizQuestion question={"Based on the code block above, how many occurences of 4 would there be?"}
+                                      explanation={"The `Remove` method only removes the FIRST occurence of any given element. Because there are two 4's in the list, there would be 1 remaining after the Remove method is called."} 
+                                      genericID={5}
+                                      correctAnswer={"1"} caseSensitive={false}/>
                     </div>
                     <NextSection currentArticle={"Lists"}/>
                 </div>

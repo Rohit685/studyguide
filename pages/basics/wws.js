@@ -48,7 +48,7 @@ static double DepositBalance(double balance, double additionalBalance)
 
 const quizQuestion = `String name = "Garry Johnson";
 int number = 4;
-String book = "book";
+String books = "books";
 `
 
 export default function Home() {
@@ -62,7 +62,7 @@ export default function Home() {
                 <div>
                     <div className={"card"}>
                         <h3>Working with Strings</h3>
-                        <p>String manipulation is very important especially in console applictions. In this section, you will learn about how to manipulate strings.</p>
+                        <p>String manipulation is very important especially in console applications. In this section, you will learn about how to manipulate strings.</p>
                         
                         <h3>String Concatenation</h3>
                         <p>String concatenation in C# is the process of combining two or more strings to create a new string. 
@@ -81,10 +81,9 @@ export default function Home() {
                         <p>I mean....sure</p>
                         <SyntaxHighlighter language="csharp" style={nightOwl} code={stringconcatmethod} useInlineStyles={true}/>
                         <p>As you can see, there are a lot of ways to combine strings and add variables. It is personal preference. I prefer the middle method personally.</p>
-                        <QuizQuestion question={"Assign the string, mySentence, to a sentence using the variables provided that makes sense and uses String Interpolation. " +
-                            "There are multiple right answers."}
-                                      qCode={quizQuestion} aCode={`String mySentence = $"{name} has {number} of {books}";`} 
-                                      explanation={"Make sure each variable has the {} around them. Before the starting quotation, do not forget the $ that signifies the string interpolation notation."}/>
+                        <QuizQuestion question={"Make the sentence: \"Garry Johnson has 4 books\" using String Interpolation and assign it to the variable of type String, mySentence."}
+                                      qCode={quizQuestion} aCode={`String mySentence = $"{name} has {number} {books}";`}  correctAnswer={`StringspacemySentence = $"{name} has {number} {books}";`}
+                                      explanation={"Make sure each variable has the {} around them. Before the starting quotation, do not forget the $ that signifies the string interpolation notation."} genericID={3} caseSensitive={false}/>
                     </div>
                     <div className={"card"}>
                         <h3>Other methods</h3>

@@ -2,11 +2,16 @@ import Head from 'next/head';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import NextSection from "../../components/NextSection";
+import QuizQuestion from "@/components/QuizQuestion";
 
 const writeline = `Console.WriteLine("Hello, World!");`
 const write = `Console.Write("Hello, World!");`
 const input = `Console.Write("What is your name: ");
 string name = Console.ReadLine();`
+
+const quizQ = `Console.Write("What is your age: ");
+int age = Console.ReadLine();`
+
 const output1 = `What is your name: `
 const output2 = `What is your name: Rohit`
 
@@ -59,6 +64,10 @@ export default function Home() {
                             <SyntaxHighlighter style={nightOwl} code={output2} useInlineStyles={true}/>
                             <p>And now the <b>name</b> variable has the value of: Rohit</p>
                             <p>We will implement user input in our bank account simulation in the next section!</p>
+                        <QuizQuestion question={"Yes/No: Is this code correct?"} qCode={quizQ} caseSensitive={false} correctAnswer={"No"} 
+                                      genericID={7} explanation={"This code is not correct because the ReadLine() method returns a string. However," +
+                            " it is being set to an integer, age."} aCode={undefined}/>
+                                      
                     </div>
                     <NextSection currentArticle={"Console Functions"}/>
                 </div>
